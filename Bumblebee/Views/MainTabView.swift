@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedTab = 0
+    private let profile = UserProfile.mockProfile()
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -23,22 +24,13 @@ struct MainTabView: View {
                 }
                 .tag(2)
             
-            ProfileView()
+            ProfileView(profile: profile)
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
                 .tag(3)
         }
         .tint(AppColors.secondary)
-    }
-}
-
-struct ProfileView: View {
-    var body: some View {
-        NavigationView {
-            Text("Your Profile")
-                .navigationTitle("Profile")
-        }
     }
 }
 

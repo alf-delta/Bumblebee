@@ -88,7 +88,7 @@ struct MapContainerView: View {
                 // MARK: - Controls Layer
                 VStack {
                     Spacer()
-                        .frame(height: 100)
+                        .frame(height: 60)
                     
                     // Zoom Controls
                     HStack {
@@ -140,7 +140,7 @@ struct MapContainerView: View {
             .sheet(isPresented: $showingListView) {
                 CoffeeShopListView(shops: viewModel.filteredShops)
             }
-            .navigationTitle("Bumblebee")
+            .navigationTitle("wanna.coffee")
         }
     }
     

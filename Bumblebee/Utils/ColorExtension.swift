@@ -1,6 +1,7 @@
 import SwiftUI
 
 extension Color {
+    // Initialize color from hex string (e.g. "#FF0000" for red)
     static func hex(_ hex: String) -> Color {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0
@@ -14,9 +15,8 @@ extension Color {
         case 8: // ARGB (32-bit)
             (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
         default:
-            (a, r, g, b) = (255, 0, 0, 0)
+            return .clear
         }
-
         return Color(
             .sRGB,
             red: Double(r) / 255,
